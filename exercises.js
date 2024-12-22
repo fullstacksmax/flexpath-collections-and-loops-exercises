@@ -20,7 +20,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   */
 
   // Modify the line of code BELOW to run a different exercise
-  exercise_01();
+  exercise_08();
   // Modify the line of code ABOVE to run a different exercise
 }
 
@@ -39,7 +39,9 @@ function exercise_01() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = [1, 2, 3, 4, 5];
+  console.log(myArray);
+  console.log(myArray.length);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -57,7 +59,10 @@ function exercise_02() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = [1, 2, 3, 4, 5];
+  console.log(myArray[0]);
+  console.log(myArray[4]);
+
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -76,7 +81,13 @@ function exercise_03() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = [];
+  let count = 0
+  while (count < 5) {
+    myArray.push(1);
+    count += 1
+  }
+  console.log(myArray);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -95,7 +106,9 @@ function exercise_04() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = ["asdf", "ere", "bbb", "ccc", "ddd"];
+  myArray.unshift(1);
+  console.log(myArray);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -115,7 +128,10 @@ function exercise_05() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+
+  let myArray = ["aaa", "bbb", "ccc","ddd","eee"];
+  myArray.pop();
+  console.log(myArray);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -134,7 +150,9 @@ function exercise_06() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = ["aaa", "bbb", "ccc","ddd","eee"];
+  console.log(myArray.shift());
+  console.log(myArray);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -152,7 +170,14 @@ function exercise_07() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  
+  let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  if (myArray.includes(7)){
+    console.log("Item is in the array!");
+  }
+  else {
+    console.log("Item is not present in the array.");
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -177,7 +202,16 @@ function exercise_08() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+ /*
+  myArray.indexOf(4);
+  
+  console.log(myArray[myArray.indexOf(4)-1]);
+  console.log(myArray[myArray.indexOf(4)+1]);
+  */
+  const i = myArray.indexOf(4);
+  console.log(myArray[i - 1]);
+  console.log(myArray[i + 1]);
 
   // CODE IN THE OPEN LINES ABOVE
 }

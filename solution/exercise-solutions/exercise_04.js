@@ -16,3 +16,4 @@ function exercise_04() {
   console.log(numbers);
   // CODE IN THE OPEN LINES ABOVE
 }
+exercise_04()
