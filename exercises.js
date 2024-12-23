@@ -20,7 +20,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   */
 
   // Modify the line of code BELOW to run a different exercise
-  exercise_08();
+  exercise_16();
   // Modify the line of code ABOVE to run a different exercise
 }
 
@@ -230,7 +230,9 @@ function exercise_09() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  myArray.splice(1, 1);
+  console.log(myArray);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -259,6 +261,14 @@ function exercise_10() {
   // CODE IN THE OPEN LINES BELOW
 
   const placeholder = "Delete this line and code in this space";
+  const map = new Map([
+    ["name", "Max"], 
+    ["age", 34],
+    ["job", "scientist"]
+  ])
+  console.log(map);
+  console.log(`${map}`);
+  console.log(`${map.get("name")} ${map.get("age")} ${map.get("job")}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -290,8 +300,12 @@ function exercise_11() {
    - The second element, the value of that key
   */
 
-  const placeholder = "Delete this line and code in this space";
-
+  const map = new Map([
+    ["name", "Max"], 
+    ["age", 34],
+    ["job", "scientist"]
+  ])
+  console.log(`This peron's name is ${map.get("name")}`);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -312,7 +326,16 @@ function exercise_12() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  const map = new Map([
+    ["name", "Max"], 
+    ["age", 34],
+    ["job", "scientist"]
+  ])
+  console.log(map);
+  console.log(map.size);
+  map.delete("age");
+  console.log(map);
+  console.log(map.size);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -348,7 +371,31 @@ function exercise_13() {
   // CODE IN THE OPEN LINES BELOW
 
   const placeholder = "Delete this line and code in this space";
-
+  const mySet = new Set([
+    "STL",
+    "SJS",
+    "CHI"
+  ])
+  console.log(mySet);
+  console.log(mySet.size);
+  mySet.add("BUF");
+  mySet.add("NSH");
+  mySet.add("TBL");
+  console.log(mySet);
+  console.log(mySet.size);
+  mySet.add("STL");
+  console.log(mySet.has("STL"));
+  if(mySet.has("STL") && mySet.has("NSH") && mySet.has("CHI")){
+    console.log("Has all three")
+  }
+  else {
+    console.log("Does not contain all three");
+  }
+  mySet.delete("CHI");
+  mySet.delete("TBL");
+  mySet.delete("BUF");
+  console.log(mySet);
+  console.log(mySet.size);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -365,6 +412,11 @@ function exercise_14() {
   // CODE IN THE OPEN LINES BELOW
 
   const placeholder = "Delete this line and code in this space";
+  let i = 1;
+  while (i <= 5) {
+    console.log(i);
+    i++
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -384,8 +436,16 @@ function exercise_15() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
-
+  let i = 28
+  do {
+    if(i % 7 == 0 || i % 4 == 0) {
+      console.log(i);
+    }
+    i--
+  }
+  while (i > 0);
+    
+    
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -406,6 +466,33 @@ function exercise_16() {
   // CODE IN THE OPEN LINES BELOW
 
   const placeholder = "Delete this line and code in this space";
+  /*let i = 1;
+  while (i <= 10) {
+    ++i;
+    if(i % 2 == 1){
+      continue;
+    }
+    if (i == 8){
+      break;
+    }
+    else{ 
+    console.log(i);
+    }
+  }
+    redo this one in a for in number loops*/ 
+    for (let i = 0; i <= 10; i++) {
+      console.log(i);
+    }
+
+    for(let i = 0; i <= 10; i++) {
+      if(i % 2 == 1) continue;
+      if(i === 8) break;
+      console.log(i);
+    }
+    
+
+
+  
 
   // CODE IN THE OPEN LINES ABOVE
 }
