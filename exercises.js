@@ -1,3 +1,4 @@
+import { type } from "os";
 import { fileURLToPath } from "url";
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
@@ -20,7 +21,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   */
 
   // Modify the line of code BELOW to run a different exercise
-  exercise_16();
+  exercise_17();
   // Modify the line of code ABOVE to run a different exercise
 }
 
@@ -617,7 +618,38 @@ function exercise_17() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+ 
+  const itemNames = [];
+  const itemTypes = new Set([]);
+  let sumPricePerType = new Map([]);
+
+  for (let i in checkoutItems) {
+    itemNames.push(checkoutItems[i]["item"]);
+    itemTypes.add(checkoutItems[i]["type"]);
+    console.log(checkoutItems[i]["price"]);
+    if(!sumPricePerType.get(checkoutItems[i]["type"])){
+      sumPricePerType.set(checkoutItems[i]["type"], checkoutItems[i]["price"]);
+    }
+    else {
+      let prevPrice = checkoutItems[i]["price"];
+      console.log(`prev price ${prevPrice}`);
+      
+      // figure out why type is changing to undefined
+      sumPricePerType.set(checkoutItems[i]["type"]), (prevPrice + checkoutItems[i]["price"]);
+      console.log(`prev price ${prevPrice}, type ${sumPricePerType[checkoutItems[i]["type"]]} new price ${(prevPrice + checkoutItems[i]["price"])}`);
+    }
+  }
+  console.log("-------------------------------------");
+  for (let j in itemNames){
+    console.log(itemNames[j]);
+  }
+  console.log("-------------------------------------");
+  for (let i of itemTypes) {
+    console.log(i);
+  }
+  console.log("-------------------------------------");
+  console.log(sumPricePerType);
+
 
   // CODE IN THE OPEN LINES ABOVE
 }
