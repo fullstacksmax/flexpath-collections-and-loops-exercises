@@ -621,24 +621,45 @@ function exercise_17() {
  
   const itemNames = [];
   const itemTypes = new Set([]);
-  let sumPricePerType = new Map([]);
+  const sumPricePerType = {};
 
   for (let i in checkoutItems) {
     itemNames.push(checkoutItems[i]["item"]);
     itemTypes.add(checkoutItems[i]["type"]);
-    console.log(checkoutItems[i]["price"]);
-    if(!sumPricePerType.get(checkoutItems[i]["type"])){
+    //console.log(`item price ${checkoutItems[i]["price"]}`); // remove later
+    //console.log(`item type ${checkoutItems[i]["type"]}`) // remove later
+    const type = checkoutItems[i]["type"];
+    const price = checkoutItems[i]["price"];
+
+    if(!sumPricePerType.hasOwnProperty(type)){
+    sumPricePerType[type] = 0;
+    
+  }
+    const newSum = sumPricePerType[type] + price;
+    sumPricePerType[type] = (Math.round(newSum * 100))/100; 
+  
+}  
+    
+
+    
+    
+    /*if(!sumPricePerType.has(checkoutItems[i]["type"])){
       sumPricePerType.set(checkoutItems[i]["type"], checkoutItems[i]["price"]);
     }
+    
+    // why is this not a SET?
     else {
       let prevPrice = checkoutItems[i]["price"];
-      console.log(`prev price ${prevPrice}`);
+      let prevType = checkoutItems[i]["type"];
+      //console.log(`this is the prev type ${prevType}`);
+      //console.log(`test ${prevPrice}`);
       
       // figure out why type is changing to undefined
-      sumPricePerType.set(checkoutItems[i]["type"]), (prevPrice + checkoutItems[i]["price"]);
-      console.log(`prev price ${prevPrice}, type ${sumPricePerType[checkoutItems[i]["type"]]} new price ${(prevPrice + checkoutItems[i]["price"])}`);
+      sumPricePerType.set(prevType), (prevPrice + checkoutItems[i]["price"]);
+      console.log(sumPricePerType);
+      //console.log(`prev price ${prevPrice}, type ${sumPricePerType[checkoutItems[i]["type"]]} new price ${(prevPrice + checkoutItems[i]["price"])}`);
     }
-  }
+  }*/
   console.log("-------------------------------------");
   for (let j in itemNames){
     console.log(itemNames[j]);
@@ -648,8 +669,17 @@ function exercise_17() {
     console.log(i);
   }
   console.log("-------------------------------------");
+  for (let i in sumPricePerType) {
+    console.log(`${i}: ${sumPricePerType[i]}`);
+  }
   console.log(sumPricePerType);
+  console.log("-------------------------------------");
+  let totalSum = 0;
 
-
+  for(let i in sumPricePerType) {
+    totalSum += sumPricePerType[i];
+    
+  }
+  console.log(`Total amount spent ${Intl.NumberFormat('en-US',{style: 'currency', currency: 'USD'}).format(totalSum)}`);
   // CODE IN THE OPEN LINES ABOVE
 }
